@@ -1,0 +1,21 @@
+article {
+	margin: 25px;
+	display: flex;
+	flex-direction: column;
+	min-width: 600px;
+}
+
+.summary {
+	display: inline-flex;
+	justify-content: space-between;
+	
+	* {
+		font-style: italic;
+	}
+}
+
+section {
+	display: inline-flex;
+	margin: 25px;
+	flex-direction: column;
+}

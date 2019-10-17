@@ -1,0 +1,10 @@
+<div class="container">
+	<aside>
+		<h2> Bands: </h2>
+		<div class="band" *ngFor="let band of bands" (click)="showBand(band)">
+			<strong>{{band.name}}</strong>
+			<span>{{band.genere}}</span>
+		</div>
+	</aside>
+	<app-description [currentBand]="chosenBand"> </app-description>
+</div>

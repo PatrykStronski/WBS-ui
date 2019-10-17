@@ -1,0 +1,11 @@
+<header>
+	<div class="logo" [routerLink]="['/']">
+		Band Encyclopaedia
+	</div>
+	<nav [ngStyle]="{
+			'display': loggedIn() ? 'inline-flex' : 'none'}">
+		<div class="subsite link" [routerLink]="['/bands']"> band </div>
+		<div class="subsite link" [routerLink]="['/addBand']"> new band </div>
+		<div class="logoff subsite" (click)="logOff()"> Log off </div>
+	</nav>
+</header>

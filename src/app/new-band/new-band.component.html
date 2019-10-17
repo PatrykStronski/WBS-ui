@@ -1,0 +1,11 @@
+<div class="container-fluid">
+	<h3> New band: </h3>
+	<form [formGroup]="bandForm" (ngSubmit)="submitBand()">
+		<label> Name: <input formControlName="name" type="string" required> </label>
+		<label> Year of foundation: <input formControlName="dateoffoundation" type="string"></label>
+		<label> Genere: <input formControlName="genere" type="string"></label>
+		<label> Description: <input formControlName="short_desc" type="string"></label>
+		<label> Members (separated with coma and space like "member, member"): <input formControlName="members" type="string"></label>
+		<input type="submit">
+	</form>
+</div>

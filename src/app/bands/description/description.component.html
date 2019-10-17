@@ -1,0 +1,12 @@
+<article *ngIf="isBand()">
+	<h2> {{currentBand.name}} </h2>
+	<div class="summary"><span> {{currentBand.dateoffoundation}} </span> <span> {{currentBand.genere}} </span> </div>
+	<section>
+		<h3>Description</h3>
+		<p> {{currentBand.short_desc}} </p>
+		<h4> members </h4>
+		<ul>
+			<li *ngFor="let member of extractBandmembers()"> {{member}} </li>
+		</ul>
+	</section>
+</article>

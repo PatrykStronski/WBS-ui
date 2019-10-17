@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<form [formGroup]="loginForm" (ngSubmit)="authorize()">
+		<label for="login"> Login </label>
+		<input type="text" formControlName="login" name="login" required>
+		<label for="pass"> Password </label>
+		<input type="password" formControlName="pass" name="pass" required>
+		<input type="submit" value="Enter!">
+		<div class="warn" [ngClass]="{
+			'visible': invalidCredentials === true, 
+			'hidden': invalidCredentials === false
+			}"> Invalid credentials </div>
+	</form>
+</div>
