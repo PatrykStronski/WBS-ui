@@ -37,12 +37,8 @@ export class AuthorizationService {
 		return new Promise((res,rej) => {
 			this.sendLogOffReq().subscribe(
 				(req) => {
-					if(req.status === 200) {
-						this.token = undefined;
-						res();
-					} else {
-						rej();
-					}
+					this.token = undefined;
+					res();
 				},
 				() => {
 					rej();
