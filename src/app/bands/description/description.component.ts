@@ -22,7 +22,10 @@ export class DescriptionComponent implements OnInit {
 	}
 
 	private extractBandmembers(): string[] {
-		return this.currentBand.members.split(', ');
+
+		return this.currentBand.members.map((member) => {
+			return member.name+' '+member.nickname+' '+member.surname;
+		});;
 	}
 
 }

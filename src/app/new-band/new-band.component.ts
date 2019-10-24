@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorizationService } from '../authorization.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Band } from '../band';
 import { HttpClient } from '@angular/common/http';
 
@@ -17,7 +17,12 @@ export class NewBandComponent implements OnInit {
     name: new FormControl(),
     short_desc: new FormControl(),
     dateoffoundation: new FormControl(),
-    members: new FormControl(),
+    members: new FormGroup({
+			name: new FormControl(),
+			nickname: new FormControl(),
+			surname: new FormControl(),
+			instruments: new FormControl()
+		}),
     genere: new FormControl(),
   });
 
@@ -32,12 +37,6 @@ export class NewBandComponent implements OnInit {
 			this.router.navigate(['/']);
 		}
   }
-
-	private validate(b: Band){
-		if(b.members.indexOf(', ')===b.members.length-2){
-			b.members = b.members.substr(0,b.members.length-2);
-		}
-	}
 
 	private submitBand() {
 		let formValue: Band = <Band><unknown>this.bandForm.value;

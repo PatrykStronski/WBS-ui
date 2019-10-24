@@ -1,8 +1,9 @@
+import { Member } from './member';
+
 export interface Band {
 	name: string;
 	short_desc: string;
 	dateOfFoundation: string;
-	members: string;
+	members?: Member[];
 	genere: string;
-	[key: string]: string;
 }
