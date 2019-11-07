@@ -50,4 +50,12 @@ export class BandsComponent implements OnInit {
 		this.chosenBand = current;
 	}
 
+	private removeBand(id: number) {
+		this.chosenBand = undefined;
+		let ind = this.bands.findIndex((b) => {
+			return b.id === id;
+		});
+		this.bands.splice(ind,1);
+	}
+
 }

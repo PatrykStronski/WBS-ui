@@ -6,5 +6,5 @@
 			<span>{{band.genere}}</span>
 		</div>
 	</aside>
-	<app-description [currentBand]="chosenBand"> </app-description>
+	<app-description (deleteB)="removeBand($event)" [currentBand]="chosenBand"> </app-description>
 </div>

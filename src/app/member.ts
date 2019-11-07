@@ -3,5 +3,4 @@ export interface Member {
 	surname: string;
 	nickname: string;
 	instrument: string;
-	[key: string]: string;
 }
