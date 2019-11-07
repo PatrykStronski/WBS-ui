@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Band } from '../../band';
+import { AuthorizationService } from '../../authorization.service';
 
 @Component({
   selector: 'app-description',
@@ -9,7 +10,7 @@ import { Band } from '../../band';
 })
 export class DescriptionComponent implements OnInit {
 	@Input() currentBand: Band | undefined = undefined;
-  constructor() { }
+  constructor(auth: AuthorizationService) { }
 
   ngOnInit() {
   }
@@ -24,8 +25,12 @@ export class DescriptionComponent implements OnInit {
 	private extractBandmembers(): string[] {
 
 		return this.currentBand.members.map((member) => {
-			return member.name+' '+member.nickname+' '+member.surname;
+			let nick = member.nickname !== null ? member.nickname : '';
+			return member.name+' '+ nick +' '+member.surname;
 		});;
+	}
+
+	private deleteBand() {
 	}
 
 }

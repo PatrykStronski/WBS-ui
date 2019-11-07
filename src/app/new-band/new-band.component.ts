@@ -51,7 +51,7 @@ export class NewBandComponent implements OnInit {
 	}
 
 	private sendSubmitBand(band: Band){
-		return this.http.post(this.bandUploadUrl,band);
+		return this.http.post(this.bandUploadUrl,{band,token: this.auth.getToken()});
 	}
 
 }

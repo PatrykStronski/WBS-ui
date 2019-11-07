@@ -18,6 +18,10 @@ export class AuthorizationService {
 		return true;
 	}
 
+	getToken(){ 
+		return this.token;
+	}
+
 	auth(user: string, pass: string) {
 		return new Promise((res,rej) => {
 			this.sendAuthReq(user, pass).subscribe(

@@ -29,9 +29,9 @@ export class BandsComponent implements OnInit {
 
 	private getBands() {
 		this.queryBands().subscribe(
-			(bands: any[]) => {
+			(bands: Band[]) => {
 				this.bands = bands.map((band) => {
-					let bnd: Band = band.band;
+					let bnd: Band = band;
 					bnd.members = band.members;
 					return bnd;
 				});
